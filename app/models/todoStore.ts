@@ -23,7 +23,7 @@ class TodosStore {
       discription:"",
       status: "",
     };
-  }
+  };
 
   constructor() {
     makeAutoObservable(this);
