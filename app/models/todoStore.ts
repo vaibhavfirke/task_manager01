@@ -9,15 +9,14 @@ export interface ITodoModel {
   discription:string,
   status: string;
 }
-
 class TodosStore {
   storageData=localStorage.getItem("taskData");
   todosList: ITodoModel[] =this.storageData?  JSON.parse(this.storageData) : [];
   todo: ITodoModel = this.resetTodoData();
 
   resetTodoData() {
+
     return {
-      //   id: 0,
       id: Math.max(0, Math.max(...this.todosList.map(({ id }) => id))) + 1,
       title: "",
       discription:"",
